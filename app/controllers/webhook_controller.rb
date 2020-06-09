@@ -39,7 +39,7 @@ class WebhookController < ApplicationController
                 curUser = User.where(user_id: profile['userId']).order(id: :asc).last
 
                 if (postbackData == "G23")
-                    return reply_text(event, "anda saat ini tidak terdeteksi terkena penyakit perokok")
+                    return reply_text(event, "anda saat ini tidak terdeteksi terkena penyakit perokok", "Terimakasih telah menggunakan kami, ketik \"mulai\" untuk memulai kembali dari awal")
                 end
 
                 if (event['postback']['data'] != "finish")
