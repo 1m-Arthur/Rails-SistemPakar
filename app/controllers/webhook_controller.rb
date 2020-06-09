@@ -108,7 +108,10 @@ class WebhookController < ApplicationController
                     return reply_postback(event, postbackData)
                 elsif (postbackData == "finish")
                     dizz = Disease.where(code_penyakit: kes.code_penyakit).first
-                    return reply_text(event, "anda kemungkinan terkena #{dizz.nama_penyakit}")
+                    reply_text(event, 
+                        "anda kemungkinan terkena #{dizz.nama_penyakit}",
+                        "Terimakasih telah menggunakan kami, ketik \"mulai\" untuk memulai kembali dari awal"
+                    )
                 end
                 
             else
