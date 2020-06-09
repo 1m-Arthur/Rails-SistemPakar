@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2020_06_06_043255) do
   create_table "kesimpulans", force: :cascade do |t|
     t.string "stage"
     t.string "code_penyakit"
+    t.string "mulai"
+    t.string "selesai"
   end
 
   create_table "questions", force: :cascade do |t|
