@@ -39,7 +39,7 @@ class WebhookController < ApplicationController
                 curUser = User.where(user_id: profile['userId']).order(id: :asc).last
 
                 if (postbackData == "G23")
-                    return reply_text(event, "anda saat ini tidak terdeteksi terkena penyakit perokok", "Terimakasih telah menggunakan kami, ketik \"mulai\" untuk memulai kembali dari awal")
+                    return reply_text(event, ["anda saat ini tidak terdeteksi terkena penyakit perokok", "Terimakasih telah menggunakan kami, ketik \"mulai\" untuk memulai kembali dari awal"])
                 end
 
                 if (event['postback']['data'] != "finish")
@@ -108,10 +108,10 @@ class WebhookController < ApplicationController
                     return reply_postback(event, postbackData)
                 elsif (postbackData == "finish")
                     dizz = Disease.where(code_penyakit: kes.code_penyakit).first
-                    reply_text(event, 
+                    reply_text(event, [
                         "anda kemungkinan terkena #{dizz.nama_penyakit}",
                         "Terimakasih telah menggunakan kami, ketik \"mulai\" untuk memulai kembali dari awal"
-                    )
+                    ])
                 end
                 
             else
@@ -151,9 +151,6 @@ class WebhookController < ApplicationController
     end
 
     def reply_postback(event, stage, opsi1 = "finish", opsi2 = opsi1)
-        # if opsi2.empty? || opsi2.nil?
-        #     opsi2 = opsi1
-        # end
 
         myQuestion = Question.where(:stage => stage).first
         
