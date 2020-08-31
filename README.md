@@ -1,24 +1,26 @@
-# README
+# Rails Postgres Sistem Pakar Linebot
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Research Journal](http://eprints.ums.ac.id/51223/1/NASKAH%20PUBLIKASI_L200130131.pdf)
+with some modification on database structure. for simplify :D
 
-Things you may want to cover:
+## What's Rails?
 
-* Ruby version
+Rails is a web-application framework that includes everything needed to
+create database-backed web applications according to the
+[Model-View-Controller (MVC)](https://en.wikipedia.org/wiki/Model-view-controller)
+pattern.
 
-* System dependencies
+Understanding the MVC pattern is key to understanding Rails. MVC divides your
+application into three layers: Model, View, and Controller, each with a specific responsibility.
 
-* Configuration
+## Getting Started
 
-* Database creation
+```
+$ bundle install #install all needed bundle
+$ rails migrate #run migration
+$ rails s #run app
+```
 
-* Database initialization
+## License
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ruby on Rails is released under the [MIT License](https://opensource.org/licenses/MIT).
