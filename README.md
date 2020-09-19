@@ -16,8 +16,14 @@ application into three layers: Model, View, and Controller, each with a specific
 ## Getting Started
 
 ```
+# modify .env file
+LINE_CHANNEL_SECRET = "YOUR CHANNEL SECRET"
+LINE_CHANNEL_TOKEN = "YOUR CHANNEL TOKEN"
+```
+```
 $ bundle install #install all needed bundle
-$ rails migrate #run migration
+$ rake db:create #run db migrate
+$ rake db:migrate #run schema migration
 $ rails s #run app
 ```
 
